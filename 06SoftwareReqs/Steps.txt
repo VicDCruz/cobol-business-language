@@ -1,0 +1,6 @@
+cd Documents/cobol-business-language/
+docker run -it --rm -v  /`pwd`:/cobol cobol bash
+cat HelloWorld.cbl
+cobc -x -o helloworld-exe HelloWorld.cbl
+
+Reference: https://www.thegeekstuff.com/2010/02/cobol-hello-world-example-how-to-write-compile-and-execute-cobol-program-on-linux-os/
