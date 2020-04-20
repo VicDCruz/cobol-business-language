@@ -4,22 +4,23 @@
       * Purpose:
       * Tectonics: cobc
       ******************************************************************
-
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. IF-Example.
+       PROGRAM-ID. COMBINED-CONDITION.
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-       01 UserInput PIC X(20).
+       01 WS-NUM1 PIC 9(2) VALUE 20.
+       01 WS-NUM2 PIC 9(2) VALUE 25.
+       01 WS-NUM3 PIC 9(2) VALUE 20.
 
        PROCEDURE DIVISION.
-       DISPLAY "Please enter your name in upper-case: ".
-       ACCEPT UserInput.
-       IF UserInput IS ALPHABETIC-LOWER
-        MOVE FUNCTION UPPER-CASE (UserInput) TO UserInput
-        DISPLAY "Please uppercase. Fixed it, ", UserInput
-        ELSE DISPLAY "Hello, ", UserInput
+       A000-FIRST-PARA.
 
-       END-IF
+       IF WS-NUM1 IS LESS THAN WS-NUM2 AND WS-NUM1=WS-NUM3 THEN
+       DISPLAY 'Both condition OK'
+       ELSE
+       DISPLAY 'Error'
+       END-IF.
+
        STOP RUN.
-       END PROGRAM IF-Example.
+       END PROGRAM COMBINED-CONDITION.
