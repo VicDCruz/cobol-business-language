@@ -40,16 +40,57 @@
            PERFORM PRINT-ALL.
       *     MOVE 1 TO Y.
       *     PERFORM PRINT-ONE.
-           MOVE 3 TO WS-X-VALUE.
-           MOVE 1 TO OPERATOR1.
-           PERFORM EVALUATE-POL.
-           MOVE "DER" TO OPERATION.
-           MOVE 1 TO OPERATOR1.
-           MOVE 2 TO OPERATOR2.
-           CALL "ARITHMETIC-POL"
-               USING OPERATION,
-               WS-COLS(OPERATOR1), WS-COLS(OPERATOR2), COUNTER.
-           PERFORM PRINT-ALL.
+           DISPLAY "=== p(x) + q(x) ===".
+      *     MOVE "ADD" TO OPERATION.
+      *     MOVE 1 TO OPERATOR1.
+      *     MOVE 2 TO OPERATOR2.
+      *     CALL "ARITHMETIC-POL"
+      *         USING OPERATION,
+      *         WS-COLS(OPERATOR1), WS-COLS(OPERATOR2), COUNTER.
+      *     PERFORM PRINT-ALL.
+           DISPLAY "=== p(x) * q(x) ===".
+      *     MOVE "MUL" TO OPERATION.
+      *     MOVE 1 TO OPERATOR1.
+      *     MOVE 2 TO OPERATOR2.
+      *     CALL "ARITHMETIC-POL"
+      *         USING OPERATION,
+      *         WS-COLS(OPERATOR1), WS-COLS(OPERATOR2), COUNTER.
+      *     PERFORM PRINT-ALL.
+           DISPLAY "=== p(q(x)) ===".
+      *     MOVE 1 TO OPERATOR1.
+      *     MOVE 2 TO OPERATOR2.
+      *     CALL "COMPOSITE-POL"
+      *         USING
+      *         WS-COLS(OPERATOR1), WS-COLS(OPERATOR2), COUNTER.
+      *     PERFORM PRINT-ALL.
+           DISPLAY "=== 0 - p(x) ===".
+      *     MOVE "SUB" TO OPERATION.
+      *     MOVE 3 TO OPERATOR1.
+      *     MOVE 1 TO OPERATOR2.
+      *     CALL "ARITHMETIC-POL"
+      *         USING OPERATION,
+      *         WS-COLS(OPERATOR1), WS-COLS(OPERATOR2), COUNTER.
+      *     PERFORM PRINT-ALL.
+           DISPLAY "=== p(3) ===".
+      *     MOVE 3 TO WS-X-VALUE.
+      *     MOVE 1 TO OPERATOR1.
+      *     PERFORM EVALUATE-POL.
+           DISPLAY "=== p'(x) ===".
+      *     MOVE "DER" TO OPERATION.
+      *     MOVE 1 TO OPERATOR1.
+      *     MOVE 2 TO OPERATOR2.
+      *     CALL "ARITHMETIC-POL"
+      *         USING OPERATION,
+      *         WS-COLS(OPERATOR1), WS-COLS(OPERATOR2), COUNTER.
+      *     PERFORM PRINT-ALL.
+           DISPLAY "=== p''(x) ===".
+      *     MOVE "DER" TO OPERATION.
+      *     MOVE 1 TO OPERATOR1.
+      *     MOVE 2 TO OPERATOR2.
+      *     CALL "ARITHMETIC-POL"
+      *         USING OPERATION,
+      *         WS-COLS(OPERATOR1), WS-COLS(OPERATOR2), COUNTER.
+      *     PERFORM PRINT-ALL.
            STOP RUN.
 
        EVALUATE-POL.

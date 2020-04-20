@@ -107,6 +107,12 @@
            IF WS-SIGN1 = "0" AND WS-SIGN2 = "0" AND OPER = "ADD" THEN
                ADD WS-ABS2 TO WS-ABS1
            ELSE IF
+               WS-SIGN1 = "0" AND WS-SIGN2 = "0" AND OPER = "SUB" THEN
+               IF WS-ABS2 > WS-ABS1 THEN
+                   MOVE "-" TO WS-SIGN1
+               END-IF
+               SUBTRACT WS-ABS2 FROM WS-ABS1
+           ELSE IF
                (WS-SIGN1 = "-" AND WS-SIGN2 = "-" AND OPER = "SUB") OR
                (WS-SIGN1 = "-" AND WS-SIGN2 = "0" AND OPER = "ADD") THEN
                IF WS-ABS2 > WS-ABS1 THEN
